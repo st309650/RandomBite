@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_addressEdit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:scrollHorizontally="false"
+        android:scrollbars="vertical"
+        android:backgroundTint="@color/primary"
+
+        >
+
+        <EditText
+            android:id="@+id/addressEdit"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:textColor="@color/text_secondary"
+            android:hint="@string/address_hint"
+            />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_maxPrice"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_layout_addressEdit"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/price_hint"
+        android:backgroundTint="@color/primary"
+        android:layout_marginTop="2dp">
+
+        <EditText
+            android:id="@+id/maxPrice"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+
+
+            android:textColor="@color/text_secondary"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <EditText
+        android:id="@+id/FoodType"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/input_layout_maxPrice"
+        android:layout_alignStart="@+id/input_layout_maxPrice"
+        android:layout_below="@+id/input_layout_maxPrice"
+        android:layout_marginTop="2dp"
+        android:clickable="false"
+        android:hint="@string/food_name"
+        android:backgroundTint="@color/primary_dark"
+
+        android:textColorHint="@color/text_secondary" />
+
+    <Spinner
+        android:id="@+id/food_choice_spinner1"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/FoodType"
+        android:layout_toRightOf="@+id/progressBar"
+        android:layout_toEndOf="@+id/progressBar"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
+
+    <Button
+        android:id="@+id/actionButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/input_layout_maxPrice"
+
+        android:layout_alignRight="@+id/input_layout_maxPrice"
+        android:layout_below="@+id/food_choice_spinner1"
+        android:layout_marginTop="2dp"
+
+        android:text="@string/button_search"
+        android:background="@drawable/ripple"
+        android:textColor="@color/text_primary" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/actionButton"
+        android:layout_alignRight="@+id/FoodType"
+        android:layout_alignEnd="@+id/FoodType" />
+
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+
+         />
+
+
+</RelativeLayout>

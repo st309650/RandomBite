@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Random Bite</string>
+    <string name="ClientID">-SgDEf6-et8vKLSJUfBY-w</string>
+    <string name="Client_Secret">LMP5zEX8rFzYoS5WOewsy667Wx3C442oF5nh8eeoZa3ziGfU69LOmH1B8PimFEGg</string>
+
+
+    <string name="address_hint">City and State</string>
+    <string name="food_name">Food Type:</string>
+    <string name="price_hint">Max Price:</string>
+    <string name="button_search">Search</string>
+
+    <string name="info">Information</string>
+    <string name="settings">Setting</string>
+
+    <string name="welcome_screen"><b>Bon Appétit</b></string>
+    <string name ="More_info">"\nHow to use:\n\nStep 1. Enter your location.\nStep 2. (Optional) Enter your price range.\nStep 3. Click Search.\nStep 4. Click on the address or maker to navigate."
+                "\n\n\nTroubleshooting:\n\n1. Location not found\n    Please re-enter your location."
+                "\n\n2. Service not available\n     Check your Internet connect."
+                "\n\n3. Cannot find any restaurant\n     Please press 'Search' again. If after 5 times pressing 'Search', and still no result, then the app can not find any restaurant that matches the description."
+                "\n(note) App only returns open place right now.\n\n\nAny problem or question please e-mail: Randombiteapp@gmail.com"
+                "\n\nThank you for using my app.\nSpecial thanks to Obaro Ogbo and others."</string>
+
+    <string name="error_cant_find_res">Cannot find any restaurant.</string>
+
+    <string-array name="type_of_food_array">
+        <item>Asian</item>
+        <item>African</item>
+        <item>European</item>
+        <item>Indian</item>
+        <item>Fast Food</item>
+        <item>Mediterranean</item>
+        <item>North America</item>
+        <item>South America</item>
+        <item>Im feeling lucky</item>
+
+    </string-array>
+
+</resources>

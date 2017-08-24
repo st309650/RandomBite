@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //change the color
+    <color name ="primary" >#4CAF50</color>
+    <color name ="primary_dark">#2E7D32</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#000000</color>
+    <color name="window_background">#FFFFFF</color>
+    <color name="nav_color">#505050</color>
+
+    <color name="grayes">#FAFAFA</color>
+
+
+</resources>
