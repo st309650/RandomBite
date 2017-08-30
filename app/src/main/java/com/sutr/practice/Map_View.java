@@ -71,9 +71,13 @@ public class Map_View extends Fragment implements OnMapReadyCallback{
         //Toast.makeText(getActivity(), "Inview", Toast.LENGTH_LONG).show();
         this.url = url;
        // nameTextView.setText(name);
-        nameTextView.setText(Html.fromHtml("<a href=\""+url + "\">"+ name + "</a"));
-        nameTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
+        if(!(url.equals(""))) {
+            nameTextView.setText(Html.fromHtml("<a href=\"" + url + "\">" + name + "</a"));
+            nameTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        }else{
+            nameTextView.setText(name);
+        }
 
         phoneTextView.setText(phone);
         addressTextView.setText(address);

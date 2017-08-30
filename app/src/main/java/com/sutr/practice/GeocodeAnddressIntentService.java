@@ -37,7 +37,7 @@ public class GeocodeAnddressIntentService extends IntentService {
         int fetchType = intent.getIntExtra(Constant.FETCH_TYPE_EXTRA, 0);
         Log.e(TAG, "fetchType == " + fetchType);
 
-        if(fetchType == Constant.USE_ADDRESS_NAME) {
+        //if(fetchType == Constant.USE_ADDRESS_NAME) {
             String name = intent.getStringExtra(Constant.LOCATION_NAME_DATA_EXTRA);
             try {
                 addresses = geocoder.getFromLocationName(name, 1);
@@ -45,11 +45,7 @@ public class GeocodeAnddressIntentService extends IntentService {
                 errorMessage = "Service not available";
                 Log.e(TAG, errorMessage, e);
             }
-        }
-        else {
-            errorMessage = "Unknown Type";
-            Log.e(TAG, errorMessage);
-        }
+
 
         resultReceiver = intent.getParcelableExtra(Constant.RECEIVER);
         if (addresses == null || addresses.size()  == 0) {

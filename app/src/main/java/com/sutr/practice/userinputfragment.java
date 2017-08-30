@@ -1,5 +1,6 @@
 package com.sutr.practice;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.location.Address;
@@ -44,7 +45,8 @@ public class userinputfragment extends Fragment{
 
     private TextInputLayout inputLayoutAddress, inputLayoutPrice;
 
-    Context context;
+    //Context context;
+   Activity context;
     GeocodeAsyncTask task;
     Address address1;
     String errorMessage = "";
@@ -66,7 +68,7 @@ public class userinputfragment extends Fragment{
     // get called when we attach the fragment into the main activity
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Activity context) {
         this.context = context;
         try {
             activityCommander = (UserInputListener)context;
@@ -121,6 +123,7 @@ public class userinputfragment extends Fragment{
                     //what happen when the buuton click
                     public void onClick(View v){
                         task = new GeocodeAsyncTask();
+                        System.out.println("Just created new geo");
                         buttonClicked(v);
                     }
                 }
@@ -136,6 +139,7 @@ public class userinputfragment extends Fragment{
         //get the price
         //if the price field is empty, pick again
 
+        /*
         addressEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -157,7 +161,7 @@ public class userinputfragment extends Fragment{
                 }
             }
         });
-
+*/
         String temp = price.getText().toString();
         if (temp.trim().equals("")){
             //Toast.makeText(getActivity(),"Max Price is empty. Default is $", Toast.LENGTH_SHORT).show();
@@ -204,8 +208,10 @@ public class userinputfragment extends Fragment{
 
         @Override
         protected Address doInBackground(String... name1) {
-             name = name1[0];
+
+            name = name1[0];
             Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+            System.out.println("After dong geo");
             List<Address> addresses = null;
 
 
