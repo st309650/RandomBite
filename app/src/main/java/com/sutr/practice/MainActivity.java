@@ -14,11 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Button;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
 import com.yelp.fusion.client.connection.YelpFusionApi;
 import com.yelp.fusion.client.connection.YelpFusionApiFactory;
 import com.yelp.fusion.client.models.Business;
@@ -35,6 +31,14 @@ import android.app.Fragment;
 import android.widget.Toast;
 
 //import org.apache.http.client.HttpClient;
+
+import org.springframework.http.ContentCodingType;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -93,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements userinputfragment
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        System.out.println("INSIDE MAN");
         //action bar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         //attach toolbar as an action bar
@@ -146,12 +150,10 @@ public class MainActivity extends AppCompatActivity implements userinputfragment
         spinner_choice = spinner_input;
         price= price_input;
 
-        //execute the search api
+
         new SearchYelp().execute();
 
     }
-
-
 
     class SearchYelp extends AsyncTask<String, Void, Address>
     {
@@ -162,6 +164,20 @@ public class MainActivity extends AppCompatActivity implements userinputfragment
 
         @Override
         protected Address doInBackground(String... Mparams) {
+
+            //execute the search api
+            String url = "https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972";
+            RestTemplate restTemplate = new RestTemplate();
+            restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
+            HttpHeaders requestHeaders = new HttpHeaders();
+            requestHeaders.add("Authorization", "Bearer Token");
+            HttpEntity<String> requestEntity = new HttpEntity<>(requestHeaders);
+            ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, String.class);
+            System.out.println(responseEntity);
+//
+//            SONObject jObject = new JSONObject(response.getBody());
+//            JSONArray jArray = jObject.getJSONArray("businesses");
+//            HashMap<Integer, HashMap<String, String>> restaurantsInfo = new HashMap<>();
             // coordinates
 ///*
             apiFactory = new YelpFusionApiFactory();

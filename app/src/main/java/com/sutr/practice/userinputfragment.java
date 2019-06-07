@@ -178,9 +178,6 @@ public class userinputfragment extends Fragment{
 
         //Toast.makeText(getActivity(),"Spinner input: " + spinner_input + " Price: " + price_input , Toast.LENGTH_LONG).show();
 
-
-
-
         String name = addressEdit.getText().toString();
         if(name.isEmpty()){
             inputLayoutAddress.setError(location_empty);
